@@ -18,7 +18,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/advice-generator-app-challenge-axios-QibcuCM0oM)
 - Live Site URL: [Live Site](https://zwiro.github.io/advice-generator-app-challenge/)
 
 ## My process
