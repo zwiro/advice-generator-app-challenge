@@ -1,0 +1,119 @@
+:root {
+    --primary-clr: hsl(193, 38%, 86%);
+    --secondary-clr: hsl(150, 100%, 66%);
+    --main-bg: hsl(218, 23%, 16%);
+    --card-bg: hsl(217, 19%, 24%);
+}
+
+html {
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 7rem;
+    background-color: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+main {
+    background-color: var(--card-bg);
+    width: 90%;
+    max-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+h1 {
+    color: var(--secondary-clr);
+    text-transform: uppercase;
+    font-size: 0.4rem;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 0 1rem 0;
+}
+
+.animation {
+    animation: textFlip 500ms;
+}
+
+h2 {
+    color: var(--primary-clr);
+    padding-bottom: 0.25rem;
+    font-size: 0.8rem;
+    padding-inline: 1rem;
+}
+
+picture {
+    margin-bottom: 2rem;
+}
+
+.dice {
+    background-color: var(--secondary-clr);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    bottom: -1rem;
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+#dice-img {
+    padding: 0.6rem;
+    height: 100%;
+}
+
+footer {
+    position: absolute;
+    top: 0;
+}
+
+@media (min-width: 1000px) {
+    main {
+        width: 19.25rem;
+        max-width: 19.25rem;
+    }
+
+    h1 {
+        font-size: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    picture {
+        margin-bottom: 2.25rem;
+    }
+}
+
+@media (hover: hover) {
+    .dice:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        box-shadow: 0px 0px 24px 0px rgba(82, 255, 166, 1);
+    }
+}
+
+@keyframes textFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}

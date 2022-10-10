@@ -1,0 +1,27 @@
+const adviceText = document.querySelector('h2');
+const headingText = document.querySelector('h1');
+const adviceNumber = document.querySelector('span');
+const randomAdviceButton = document.querySelector('.dice');
+
+const getAdvice = async () => {
+    try {
+        const res = await axios.get('https://api.adviceslip.com/advice');
+        return [res.data.slip.advice, res.data.slip.id];
+    }
+    catch (e) {
+        return ['No advices available!', ''];
+    }
+}
+
+const randomAdvice = async () => {
+    const advice = await getAdvice();
+    headingText.classList.add('animation');
+    adviceText.textContent = advice[0];
+    adviceNumber.textContent = advice[1];
+}
+
+randomAdviceButton.addEventListener('click', randomAdvice);
+
+headingText.addEventListener('animationend', () => {
+    headingText.classList.remove('animation');
+})
